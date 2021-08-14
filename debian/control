@@ -1,12 +1,12 @@
 Source: stone
 Section: net
 Priority: optional
-Maintainer: Takuo Kitame <kitame@debian.org>
+Maintainer: nasu
 Standards-Version: 3.8.3
 
 Package: stone
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, openssl
+Depends: ${shlibs:Depends}, ${misc:Depends}, cpp
 Conflicts: stone-ssl
 Replaces: stone-ssl
 Description: TCP/IP packet repeater in the application layer
