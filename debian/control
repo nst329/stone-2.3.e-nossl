@@ -1,0 +1,19 @@
+Source: stone
+Section: net
+Priority: optional
+Maintainer: Takuo Kitame <kitame@debian.org>
+Build-Depends: debhelper (>= 6.0.7~), libssl1.0-dev | libssl-dev (<< 1.1.0~)
+Standards-Version: 3.8.3
+
+Package: stone
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, openssl
+Conflicts: stone-ssl
+Replaces: stone-ssl
+Description: TCP/IP packet repeater in the application layer
+ It repeats TCP and UDP packets from inside to outside of a firewall, or from
+ outside to inside.
+ Stone supports SSL. stone can encrypt/decrypt packets with OpenSSL library.
+ Stone can also be a tiny http proxy.
+ POP -> APOP conversion. With stone and a mailer that does not support APOP,
+ you can access to an APOP server.

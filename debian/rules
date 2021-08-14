@@ -1,0 +1,69 @@
+#!/usr/bin/make -f
+# Sample debian/rules that uses debhelper.
+# GNU copyright 1997 to 1999 by Joey Hess.
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+
+DEB_HOST_ARCH_OS ?= $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+
+ifeq (kfreebsd,$(DEB_HOST_ARCH_OS))
+	EXTRA_FLAGS=-UPRCTL -UUSE_EPOLL
+else
+	EXTRA_FLAGS=""
+endif
+
+build: build-stamp
+build-stamp:
+	dh_testdir
+
+	$(MAKE) linux-ssl SSL_FLAGS="-DUSE_SSL -I/usr/include/openssl $(EXTRA_FLAGS)" \
+	SSL_LIBS="-L/usr/lib/ssl/lib -lssl -lcrypto" \
+	POP_FLAGS= POP_LIBS=
+
+	cp -a stone.1.ja stone.ja.1
+
+	touch $@
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f *-stamp
+
+	$(MAKE) clean
+	rm -f stone.ja.1
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	install -m 755 -o root stone $(CURDIR)/debian/stone/usr/bin/stone
+
+# Build architecture-independent files here.
+binary-indep: build install
+# We have nothing to do by default.
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installdocs
+	dh_installchangelogs 
+	dh_installman stone.1 stone.ja.1
+	dh_lintian
+	dh_strip
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install

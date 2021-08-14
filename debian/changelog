@@ -1,0 +1,110 @@
+stone (2.3.e-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Fix FTBFS by using OpenSSL 1.0.2. (Closes: #828560)
+
+ -- Adrian Bunk <bunk@debian.org>  Sat, 14 Jan 2017 00:58:31 +0200
+
+stone (2.3.e-2) unstable; urgency=low
+
+  [ Jean-Baptiste Lallement (#564498) ]
+  * debian/postinst: 
+      - Fix incorrect use of command expansion which prevent 
+      installation of the package with dash (closes: #564498)
+      - Display the right path to the certificate when it already exists
+
+  [ Takuo Kitame ]
+  * fix lintian errors.
+
+ -- Takuo Kitame <kitame@debian.org>  Wed, 13 Jan 2010 17:32:34 +0900
+
+stone (2.3.e-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Makefile: Added -D_GNU_SOURCE option to compile. (Closes: #517574)
+
+ -- Miguel Ruiz <debianized@gmail.com>  Sun, 20 Sep 2009 20:13:16 -0400
+
+stone (2.3.e-1) unstable; urgency=low
+
+  * New upstream release
+  * This upload is not NMU.
+
+ -- Takuo KITAME <kitame@debian.org>  Thu, 05 Feb 2009 12:22:04 +0900
+
+stone (2.3.c-2) unstable; urgency=low
+
+  * fix again FTBFS on GNU/kFreeBSD (closes: #374771)
+
+ -- Takuo KITAME <kitame@debian.org>  Mon,  6 Nov 2006 20:24:18 +0900
+
+stone (2.3.c-1) unstable; urgency=low
+
+  * New upstream release (closes: #390988)
+  * fix FTBFS on GNU/kFreeBSD (closes: #374771)
+
+ -- Takuo Kitame <kitame@debian.org>  Mon,  6 Nov 2006 14:22:28 +0900
+
+stone (2.3-1) unstable; urgency=low
+
+  * New upstream release (closes: #372959)
+
+ -- Takuo KITAME <kitame@debian.org>  Wed, 21 Jun 2006 13:18:34 +0900
+
+stone (2.2e-2) unstable; urgency=low
+
+  * build against libssl0.9.8
+
+ -- Takuo KITAME <kitame@debian.org>  Mon, 31 Oct 2005 23:39:02 +0900
+
+stone (2.2e-1) unstable; urgency=low
+
+  * New upstream release (closes: #225280)
+
+ -- Takuo KITAME <kitame@debian.org>  Tue, 17 May 2005 12:47:47 +0900
+
+stone (2.2-1) unstable; urgency=low
+
+  * New upstream release (closes: #196743)
+  * Depends on openssl (closes: #190542)
+
+ -- Takuo KITAME <kitame@debian.org>  Fri, 19 Dec 2003 14:06:42 +0900
+
+stone (2.1.r-4) unstable; urgency=low
+
+  * install /etc/certs/stone.pem
+
+ -- Takuo KITAME <kitame@debian.org>  Tue,  8 Apr 2003 15:34:02 +0900
+
+stone (2.1.r-3) unstable; urgency=low
+
+  * SSL support include.
+  * Fix description (closes: #170348)
+
+ -- Takuo KITAME <kitame@debian.org>  Mon, 25 Nov 2002 15:02:29 +0900
+
+stone (2.1.r-2) unstable; urgency=low
+
+  * Change maintainer address to @debian.org
+
+ -- Takuo KITAME <kitame@debian.org>  Fri,  8 Nov 2002 17:54:18 +0900
+
+stone (2.1.r-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takuo KITAME <kitame@northeye.org>  Sat, 27 Apr 2002 12:03:01 +0900
+
+stone (2.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Takuo KITAME <kitame@northeye.org>  Wed,  3 Nov 1999 15:48:16 +0900
+
+stone (2.0.q-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Takuo KITAME <kitame@northeye.org>  Tue, 12 Oct 1999 00:59:42 +0900
+
+
