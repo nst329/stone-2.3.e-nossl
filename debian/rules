@@ -18,8 +18,7 @@ build: build-stamp
 build-stamp:
 	dh_testdir
 
-	$(MAKE) linux-ssl SSL_FLAGS="-DUSE_SSL -I/usr/include/openssl $(EXTRA_FLAGS)" \
-	SSL_LIBS="-L/usr/lib/ssl/lib -lssl -lcrypto" \
+	$(MAKE) linux-ssl SSL_FLAGS="$(EXTRA_FLAGS)" \
 	POP_FLAGS= POP_LIBS=
 
 	cp -a stone.1.ja stone.ja.1
